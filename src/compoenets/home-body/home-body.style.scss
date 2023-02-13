@@ -1,0 +1,21 @@
+.home-body-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .home-body-title {
+        width: 550px;
+        text-align: center;
+        @media screen and (max-width: 600px) {
+            width: 90vw;
+        }     
+        h1 {
+            @media screen and (max-width: 600px) {
+                font-size: 1.6rem;
+            }
+        }
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}

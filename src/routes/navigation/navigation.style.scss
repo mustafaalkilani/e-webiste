@@ -1,0 +1,67 @@
+.main-container {
+    .phone-navigation-btn {
+        position: fixed;
+        left: 5px;
+        top: 5px;
+        font-size: 1.6rem;
+        display: none;
+        z-index: 6;
+    @media screen and (max-width: 600px){
+        display: flex;
+    }
+    }
+    a {
+        padding: 20px;
+        margin: 25px;
+        color: #000;
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #333;
+    }
+
+    .phone-navigation-bar-container {
+        display: none;
+        position: fixed;
+        flex-direction: column;
+        background-color: #ADD8E6;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        animation: 0.6s alternate phone-nav;
+        z-index: 5;
+        @media screen and (max-width: 600px) {
+            a {
+                width: 140px;
+                white-space: nowrap;
+                text-align: center;
+            }
+        }
+    }
+    .navigation-bar-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: fixed;
+        right: 5px;
+        top: 1px;
+        @media screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+
+    @keyframes phone-nav {
+        from{
+            transform: translateX(-2000px);
+        }to {
+            transform: translateX(0px);
+        }
+    }
+}
+
