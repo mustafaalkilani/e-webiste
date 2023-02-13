@@ -1,6 +1,5 @@
 import { Fragment, useState, useContext } from 'react';
 import InputFileds from '../../input-fileds/input-fileds.component';
-import { MailFormContext } from '../../../context/mail-form.context';
 import { SendEmail } from '../../../utils/mail.utils';
 import './form.style.scss';
 
@@ -15,7 +14,6 @@ const defaultFormFileds = {
 const Form = () => {
     const [formFileds, setFormFileds] = useState(defaultFormFileds);
     const {email, firstName, lastName, message, phone} = formFileds;
-    const {setInputFiledsValues} = useContext(MailFormContext);
     const fileds = [
         {
             'id': '1',
@@ -71,8 +69,11 @@ const Form = () => {
 
     const handelSubmit = (event) => {
         event.preventDefault();
-        setInputFiledsValues(formFileds);
-        SendEmail();
+        const html = `Full Name: ${formFileds.firstName} ${formFileds.lastName}
+        Email: ${formFileds.email}
+        Phone: ${formFileds.phone}
+        Message: ${formFileds.message}`
+        SendEmail(html);
         resetFromFileds();
     }
 
