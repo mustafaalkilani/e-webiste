@@ -1,7 +1,7 @@
 import { Fragment, useState, useContext } from 'react';
 import InputFileds from '../../input-fileds/input-fileds.component';
 import { MailFormContext } from '../../../context/mail-form.context';
-import { SendMail } from '../../../utils/mail.utils';
+import { SendEmail } from '../../../utils/mail.utils';
 import './form.style.scss';
 
 const defaultFormFileds = {
@@ -72,7 +72,7 @@ const Form = () => {
     const handelSubmit = (event) => {
         event.preventDefault();
         setInputFiledsValues(formFileds);
-        SendMail();
+        SendEmail();
         resetFromFileds();
     }
 
