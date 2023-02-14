@@ -69,7 +69,7 @@ const Form = () => {
 
     const handelSubmit = async (event) => {
         event.preventDefault();
-        const html = `Full Name: ${formFileds.firstName} ${formFileds.lastName}\n\n
+        const html = `there is new submission \nFull Name: ${formFileds.firstName} ${formFileds.lastName}\n\n
         Email: ${formFileds.email}\n\n
         Phone: ${formFileds.phone}\n\n\n
         Message: ${formFileds.message}`

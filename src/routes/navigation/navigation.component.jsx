@@ -15,6 +15,9 @@ const Navigation = () => {
             setPhoneNavigationBtn('closed');
         }
     }
+    const hanedlWhatsappClick = () => {
+        window.open('https://www.mustafaalkilani.com', '_blank');
+    }
     return (
         <div className="main-container">
             <div className="navigation-bar-container">
@@ -27,6 +30,9 @@ const Navigation = () => {
             </div>
             <div className="phone-navigation-btn" onClick={handelClick}>
             {phoneNavigationBtn === 'closed' ? <i className="fa-solid fa-bars"></i>: <i className="fa-sharp fa-solid fa-xmark"></i>}
+            </div>
+            <div className='whatsapp-icon' onClick={hanedlWhatsappClick}>
+                <i className="fa-brands fa-whatsapp"></i>
             </div>
             <Outlet />
     </div>
