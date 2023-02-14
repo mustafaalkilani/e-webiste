@@ -1,30 +1,27 @@
 const nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  auth: {
-    user: "hackmeifyoucan0123@gmail.com",
-    pass: "ezvmozlsgxeghhkx",
-  }
-});
+exports.handler = async (event, context) => {
+  const { html } = JSON.parse(event.body);
 
-const sendEmail = (html) => {
-  const mailOptions = {
-    from: 'hackmeifyoucan0123@gmail.com',
-    to: 'alkilanymustafa@icloud.com',
-    subject: 'New Submit',
-    html
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log('Email sent: ' + info.response);
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    auth: {
+      user: "hackmeifyoucan0123@gmail.com",
+      pass: "ezvmozlsgxeghhkx",
     }
   });
-};
 
-module.exports = sendEmail;
+  let info = await transporter.sendMail({
+    from: '"Mustafa Alkilani" <hackmeifyoucan0123@gmail.com>',
+    to: 'alkilanymustafa@gmail.com',
+    subject: 'Submit Form',
+    html: html
+  });
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({ message: 'Email sent successfully' })
+  };
+};

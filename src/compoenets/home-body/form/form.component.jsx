@@ -1,4 +1,4 @@
-import { Fragment, useState, useContext } from 'react';
+import { Fragment, useState } from 'react';
 import InputFileds from '../../input-fileds/input-fileds.component';
 import { SendEmail } from '../../../utils/mail.utils';
 import './form.style.scss';
@@ -67,14 +67,14 @@ const Form = () => {
         setFormFileds({...formFileds, [name]: value});
     }
 
-    const handelSubmit = (event) => {
+    const handelSubmit = async (event) => {
         event.preventDefault();
-        const html = `Full Name: ${formFileds.firstName} ${formFileds.lastName}
-        Email: ${formFileds.email}
-        Phone: ${formFileds.phone}
+        const html = `Full Name: ${formFileds.firstName} ${formFileds.lastName}\n\n
+        Email: ${formFileds.email}\n\n
+        Phone: ${formFileds.phone}\n\n\n
         Message: ${formFileds.message}`
-        SendEmail(html);
         resetFromFileds();
+        await SendEmail(html);
     }
 
     return (
