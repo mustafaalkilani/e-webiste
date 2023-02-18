@@ -1,0 +1,16 @@
+.about-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    @media screen and (max-width: 600px) {
+      width: 95vw;
+    }
+    p {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400; 
+        text-align: justify;
+      }
+}

@@ -1,0 +1,58 @@
+.contact-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 99vw;
+    overflow: hidden;
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+    div {
+        width: auto;
+        @media screen and (max-width: 600px) {
+            width: 95vw;
+            margin-left: 10px;
+        }
+    }
+    .contact-company-logo {
+        @media screen and (max-width: 600px) {
+            width: 95vw;
+            padding-top: 30px;
+            margin-left: 10px;
+        }
+    }
+    .contact-company-info {
+        @media screen and (max-width: 600px) {
+            width: 95vw;
+            padding-top: 30px;
+            margin-left: 10px;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            h3 {
+                padding-left: 5px;
+            }
+        }
+    }
+    .contact-company-about {
+        width: 30%;
+        text-align: justify;
+        @media screen and (max-width: 600px) {
+            width: 95vw;
+            padding-top: 30px;
+        }
+        .fa-brands {
+            padding: 1px 10px;
+            margin-bottom: 20px;
+            font-size: 2.7rem;
+            cursor: pointer;
+            &:hover {
+                color: #854256;
+            }
+        }
+    }
+}

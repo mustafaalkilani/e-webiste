@@ -5,14 +5,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PhoneNavigationProvider } from './context/phone-navigation.context';
+import { NavigationScrollToProvider } from './context/navigation-scroll.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <NavigationScrollToProvider>
       <PhoneNavigationProvider>
-          <App />
-        </PhoneNavigationProvider>
+       <App />
+      </PhoneNavigationProvider>
+    </NavigationScrollToProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -1,0 +1,28 @@
+.overlay-container {
+    background: url('../../../public/images/overlay.jpg') fixed center center no-repeat;
+    background-size: cover;
+    width: 99vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    @media screen and (max-width: 600px ) {
+        background: url('../../../public/images/overlay.jpg') center center no-repeat;
+        background-size: cover;
+        height: 300px;
+    }
+    .h1-overlay {
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2.5rem;
+    }
+    .p-overlay {
+        color: #fff;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.2rem;
+    }
+}

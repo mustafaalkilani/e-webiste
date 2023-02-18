@@ -1,6 +1,9 @@
 import './home-body.style.scss';
-import Form from './form/form.component';
-
+import Form from '../form/form.component';
+import HomeProperties from '../properties/properties.component';
+import About from '../about/about.component';
+import OverLay from '../overlay/overlay.component';
+import Contact from '../Contact/contact.component';
 const HomeBody = () => {
     return (
         <div className='home-body-container'>
@@ -13,6 +16,10 @@ const HomeBody = () => {
                 </p>
             </div>
             <Form />
+            <HomeProperties />
+            <OverLay />
+            <About />
+            <Contact />
         </div>
     )
 }
