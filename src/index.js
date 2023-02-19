@@ -6,16 +6,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PhoneNavigationProvider } from './context/phone-navigation.context';
 import { NavigationScrollToProvider } from './context/navigation-scroll.context';
+import { SignInProvider } from './context/signin.context';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <NavigationScrollToProvider>
-      <PhoneNavigationProvider>
-       <App />
-      </PhoneNavigationProvider>
-    </NavigationScrollToProvider>
+    <SignInProvider>
+      <NavigationScrollToProvider>
+        <PhoneNavigationProvider>
+        <App />
+        </PhoneNavigationProvider>
+      </NavigationScrollToProvider>
+    </SignInProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

@@ -3,6 +3,7 @@ import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
 import Properties from './routes/properties/properties.component';
 import Admin from './routes/adminPage/admin.component';
+import DashBoard from './routes/dashboard/dashboard.component';
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path='properties' element={<Properties />} />
       </Route>
       <Route path='fsdARadcvaRc' element={<Admin />} />
+      <Route path='dashboard' element={<DashBoard />} />
     </Routes>
   )
 }

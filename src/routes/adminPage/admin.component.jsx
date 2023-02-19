@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './admin.styles.scss';
 import {signInAuthUserWithEmailAndPassword} from '../../utils/firestore.utils';
 import { useNavigate } from 'react-router-dom';
+import { SignInContext } from '../../context/signin.context';
 
 const inputValues = {
     email: '',
@@ -12,6 +13,7 @@ const Admin = () => {
     const [formFileds, setFormFileds] = useState(inputValues);
     const {email, password} = formFileds;
     const navigate = useNavigate();
+    const {setIsSignIn} = useContext(SignInContext);
     const fileds = [
         {
             id: '1',
@@ -38,12 +40,34 @@ const Admin = () => {
     const handelSubmit = async (event) => {
         const { email, password } = event.target.elements;
         event.preventDefault();
-        const response = await signInAuthUserWithEmailAndPassword(email.value, password.value);
-        console.log(response);
-        resetFileds();
-        if (response) {
-            navigate('/dashboard'); // redirect to dashboard if user is logged in
-          }
+        try {
+            const response = await signInAuthUserWithEmailAndPassword(email.value, password.value);
+            console.log(response);
+            resetFileds();
+            if (response) {
+                navigate('/dashboard');
+                setIsSignIn(true);
+              }
+        } catch (error) {
+            switch(error.code) {
+                case 'auth/user-not-found':
+                    alert('User Not Found !!');
+                    break;    
+                case 'auth/wrong-password':
+                    alert('Wrong Password !!');
+                    break
+                case 'auth/network-request-failed':
+                    alert('Check Your Internet !!');
+                    break
+                case 'auth/too-many-requests':
+                    alert('Too Many failed attempts !!');
+                    break
+                default:
+                    alert('Please Try Again Later !!');
+                    console.log(error.message);
+
+            }
+        }
     }
 
     const handelChange = (event) => {
