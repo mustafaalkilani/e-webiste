@@ -2,7 +2,9 @@ import './loading.style.scss';
 
 const Loading = () => {
     return (
-        <div class="loader"></div>
+        <div className='loader-container'>
+            <div class="loader"></div>
+        </div>
     )
 }
 
