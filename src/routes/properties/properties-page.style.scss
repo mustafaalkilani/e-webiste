@@ -1,0 +1,67 @@
+.prop-first-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .main-background-prop {
+        background: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2065&q=80')center center no-repeat;
+        background-size: cover;
+        width: 99.2vw;
+        height: 100vh;
+    }
+    .background-prop-page {
+        height: 730px;
+        min-width: 1000px;
+        margin-top: 120px;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        @media screen and (max-width: 600px) {
+            min-width: 98vw;
+        }
+    }
+
+    .image-prop-page {
+        height: 730px;
+        height: 730px;
+        min-width: 1000px;
+        margin-top: 120px;
+        margin-top: 70px;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        @media screen and (max-width: 600px) {
+            min-width: 98vw;
+        }
+    }
+
+    .prop-page-main-container {
+        width: 750px;
+        margin: 0;
+        h1 {
+            margin: 0;
+        }
+        @media screen and (max-width: 600px) {
+            width: 98vw;
+        }
+    }
+
+    .prop-page-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .p-one {
+        text-align: justify;
+        font-size: 1rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 400; 
+        width: 750px;
+        @media screen and (max-width: 600px) {
+            width: 98vw;
+            font-size: 0.9rem;
+        }
+    }
+
+}
+

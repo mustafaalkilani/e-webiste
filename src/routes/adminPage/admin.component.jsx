@@ -42,7 +42,6 @@ const Admin = () => {
         event.preventDefault();
         try {
             const response = await signInAuthUserWithEmailAndPassword(email.value, password.value);
-            console.log(response);
             resetFileds();
             if (response) {
                 navigate('/dashboard');
@@ -72,7 +71,6 @@ const Admin = () => {
 
     const handelChange = (event) => {
         const { name, value } = event.target;
-        console.log(formFileds);
 
         setFormFileds({...formFileds, [name]: value});
     }

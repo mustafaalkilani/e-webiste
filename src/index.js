@@ -7,18 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import { PhoneNavigationProvider } from './context/phone-navigation.context';
 import { NavigationScrollToProvider } from './context/navigation-scroll.context';
 import { SignInProvider } from './context/signin.context';
-
+import { PropDataFetchProvider } from './context/properties-data.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <SignInProvider>
-      <NavigationScrollToProvider>
-        <PhoneNavigationProvider>
-        <App />
-        </PhoneNavigationProvider>
-      </NavigationScrollToProvider>
+      <PropDataFetchProvider>
+        <NavigationScrollToProvider>
+          <PhoneNavigationProvider>
+          <App />
+          </PhoneNavigationProvider>
+        </NavigationScrollToProvider>
+      </PropDataFetchProvider>
     </SignInProvider>
     </BrowserRouter>
   </React.StrictMode>
