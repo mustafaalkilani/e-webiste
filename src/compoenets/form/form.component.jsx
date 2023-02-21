@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import InputFileds from '../input-fileds/input-fileds.component';
 import { SendEmail } from '../../utils/mail.utils';
+
 import './form.style.scss';
 const defaultFormFileds = {
     'firstName': '',
