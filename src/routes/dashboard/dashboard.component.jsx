@@ -43,11 +43,11 @@ const DashBoardComp = () => {
             <label htmlFor="property-image">Choose photo for home display:</label>
             <input type="file" id="property-image" name='image' required accept="image/*"/>
             <label htmlFor="property-title">Property sub title:</label>
-            <input type="text" id="property-title" required name='subTitle' />
+            <input type="text" id="property-title" name='subTitle' />
             <label htmlFor="property-explanation">Explanation of the property:</label>
-            <textarea id="property-explanation" name='subMessage' required/>
+            <textarea id="property-explanation" name='subMessage'/>
             <label htmlFor="property-image">Choose photo for property page display:</label>
-            <input type="file" name='propImage' required accept="image/*"/>
+            <input type="file" name='propImage' accept="image/*"/>
             <button type="submit" className='upload-property'>Upload</button>
           </form>
         </div>
