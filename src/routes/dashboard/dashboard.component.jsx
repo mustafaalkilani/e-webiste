@@ -10,6 +10,7 @@ const DashBoardComp = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const { homeTitle, homeImage, title, message, image, propImage, subTitle, subMessage} = event.target.elements;
+        const targets = [homeTitle, homeImage, title, image, propImage, subTitle, subMessage];
 
         const fileOne = image.files[0];
         const fileTwo = propImage.files[0];
@@ -18,14 +19,9 @@ const DashBoardComp = () => {
         const imageTwoUploadResponseUrl = await uploadImageAndGetDownloadUrl(fileTwo);
         const imageThreeUploadResponseUrl = await uploadImageAndGetDownloadUrl(fileThree);
         await uploadFormToFirestore(homeTitle.value, imageThreeUploadResponseUrl, title.value, message.value, imageUploadResponseUrl, subTitle.value, subMessage.value, imageTwoUploadResponseUrl);
-        title.value = '';
-        message.value = '';
-        image.value = '';
-        propImage.value = '';
-        subTitle.value = '';
-        subMessage.value = '';
-        homeTitle.value = '';
-        homeImage.value = '';
+        for(let i = 0; i < targets.length; i++) {
+          targets[i].value = '';
+        }
     }
     return (
       <>
